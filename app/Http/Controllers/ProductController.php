@@ -13,7 +13,7 @@ class ProductController extends Controller
 		private ProductRepository $productRepository
 	) {}
 
-	public function index(ProductRequest $request, int $page = 1)
+	public function index(ProductRequest $request, int $page = 1): array
 	{
 		return $this->productRepository->findBy($page, $request->validated());
 	}

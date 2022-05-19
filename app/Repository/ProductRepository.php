@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-use App\Contracts\ProductsPaginator;
 use App\Models\Product;
-use App\Repository\paginator\ProductsPaginatorImpl;
 
 class ProductRepository
 {
@@ -47,12 +45,12 @@ class ProductRepository
 		$product->saveOrFail();
 	}
 
-	public function remove(Product $product)
+	public function remove(Product $product): void
 	{
 		$product->deleteOrFail();
 	}
 
-	public function update(Product $product)
+	public function update(Product $product): void
 	{
 		$product->updateOrFail();
 	}
